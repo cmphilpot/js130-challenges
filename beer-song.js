@@ -24,7 +24,7 @@ class BeerSong {
       wholeSong += `Take ${oneOrIt} down and pass it around, ${descendingNumber === 1 ? 'no more' : descendingNumber - 1} ${descendingNumber === 2 ? 'bottle' : 'bottles'} of beer on the wall.\n\n`;
     }
 
-    return wholeSong.trim();
+    return wholeSong;
   }
 };
 
@@ -234,20 +234,21 @@ function wholeSong() {
     "No more bottles of beer on the wall, no more bottles of beer.\n" +
     "Go to the store and buy some more, 99 bottles of beer on the wall.\n";
 }
+
+
+console.log(wholeSong());
+console.log(BeerSong.lyrics());
+console.log(wholeSong() === BeerSong.lyrics());
 */
 
-// console.log(wholeSong());
-// console.log(BeerSong.lyrics());
-
-
-//console.log(BeerSong.verse(99));
+// console.log(BeerSong.verse(99));
 
 /*
  "99 bottles of beer on the wall, 99 bottles of beer.
  Take one down and pass it around, 98 bottles of beer on the wall.\n"
 */
 
-//console.log(BeerSong.verse(3));
+console.log(BeerSong.verse(3));
 
 /*
 "3 bottles of beer on the wall, 3 bottles of beer.
@@ -279,7 +280,7 @@ bottles of beer.\nGo to the store and buy some
 more, 99 bottles of beer on the wall.\n";
 */
 
-//console.log(BeerSong.verses(99, 98));
+// console.log(BeerSong.verses(99, 98));
 
 /*
 "99 bottles of beer on the wall, 99 bottles of beer.\n
