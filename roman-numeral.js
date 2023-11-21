@@ -1,13 +1,3 @@
-/* notes
-
-convert modern decimal numbers into their Roman number equivalents.
-
-1  => I
-10 => X
-7  => VII
-
-*/
-
 class RomanNumeral {
   constructor (number) {
     this.number = number;
@@ -33,104 +23,91 @@ class RomanNumeral {
   }
 
   toRoman() {
+    const LEN = String(this.number).length;
     let arrayOfDigitsReversed = Array.from(String(this.number)).reverse();
     let finalString = '';
 
-    console.log(arrayOfDigitsReversed);
-
-    for (let index = 0; index < arrayOfDigitsReversed.length; index += 1) {
+    for (let index = 0; index < LEN; index += 1) {
+      if (arrayOfDigitsReversed[index] == 0) continue;
       if (index === 0) finalString += RomanNumeral.ones[arrayOfDigitsReversed[index]];
-      if (index === 1) finalString = RomanNumeral.tens[arrayOfDigitsReversed[index]] += finalString;
-      if (index === 2) finalString = RomanNumeral.hundreds[arrayOfDigitsReversed[index]] += finalString;
-      if (index === 3) finalString = RomanNumeral.thousands[arrayOfDigitsReversed[index]] += finalString;
-      console.log(finalString);
+      if (index === 1) finalString = RomanNumeral.tens[arrayOfDigitsReversed[index]] + finalString;
+      if (index === 2) finalString = RomanNumeral.hundreds[arrayOfDigitsReversed[index]] + finalString;
+      if (index === 3) finalString = RomanNumeral.thousands[arrayOfDigitsReversed[index]] + finalString;
     }
 
     return finalString;
   }
+  
 };
+
+
+
 
 module.exports = RomanNumeral;
 
+/* test suite
+
+let one = new RomanNumeral(1);
+console.log(one.toRoman());      //   'I'
+
+let two = new RomanNumeral(2);
+console.log(two.toRoman());      //   'II'
+
+let three = new RomanNumeral(3);
+console.log(three.toRoman());    //   'III'
+
+let four = new RomanNumeral(4);
+console.log(four.toRoman());     //   'IV'
+
+let five = new RomanNumeral(5);
+console.log(five.toRoman());     //   'V'
+
+let seven = new RomanNumeral(6);
+console.log(seven.toRoman());    //   'VI'
+
+let eight = new RomanNumeral(9);
+console.log(eight.toRoman());    //   'IX'
+
+let nine = new RomanNumeral(27);
+console.log(nine.toRoman());     //   'XXVII'
+
+let ten = new RomanNumeral(48);
+console.log(ten.toRoman());      //   'XLVIII'
+
+let eleven = new RomanNumeral(59);
+console.log(eleven.toRoman());   //   'LIX'
+
+let twelve = new RomanNumeral(93);
+console.log(twelve.toRoman());   //   'XCIII'
+
 let thirteen = new RomanNumeral(141);
-console.log(thirteen.toRoman()); //   'CXLI'   /// 'CXL - VIII -I'
+console.log(thirteen.toRoman()); //   'CXLI'
 
-// let fourteen = new RomanNumeral(163);
-// console.log(fourteen.toRoman()); //   'CLXIII'  //// getting "CXLVIIIILXIII" "C-XLVIIII-LXIII"
+let fourteen = new RomanNumeral(163);
+console.log(fourteen.toRoman()); //   'CLXIII'
 
-// let eighteen = new RomanNumeral(1024);
-// console.log(eighteen.toRoman()); //   'MXXIV', somehow getting "MXXVIIIV" instead
+let fifteen = new RomanNumeral(402);
+console.log(fifteen.toRoman());  //   'CDII'
 
-// let nineteen = new RomanNumeral(3000);
-// console.log(nineteen.toRoman()); //   'MMM' somehow 28 & 7 are added "MMM XXVIII VII"
+let sixteen = new RomanNumeral(575);
+console.log(sixteen.toRoman());  //   'DLXXV'
 
+let seventeen = new RomanNumeral(911);
+console.log(seventeen.toRoman());//   'CMXI'
 
+let eighteen = new RomanNumeral(1024);
+console.log(eighteen.toRoman()); //   'MXXIV'
 
+let nineteen = new RomanNumeral(3000);
+console.log(nineteen.toRoman()); //   'MMM'
 
+let twenty = new RomanNumeral(44);
+console.log(twenty.toRoman());   //   'XLIV'
 
-
-// let one = new RomanNumeral(1);
-// console.log(one.toRoman());      //   'I'
-
-// let two = new RomanNumeral(2);
-// console.log(two.toRoman());      //   'II'
-
-// let three = new RomanNumeral(3);
-// console.log(three.toRoman());    //   'III'
-
-// let four = new RomanNumeral(4);
-// console.log(four.toRoman());     //   'IV'
-
-// let five = new RomanNumeral(5);
-// console.log(five.toRoman());     //   'V'
-
-// let seven = new RomanNumeral(6);
-// console.log(seven.toRoman());    //   'VI'
-
-// let eight = new RomanNumeral(9);
-// console.log(eight.toRoman());    //   'IX'
-
-// let nine = new RomanNumeral(27);
-// console.log(nine.toRoman());     //   'XXVII'
-
-// let ten = new RomanNumeral(48);
-// console.log(ten.toRoman());      //   'XLVIII'
-
-// let eleven = new RomanNumeral(59);
-// console.log(eleven.toRoman());   //   'LIX'
-
-// let twelve = new RomanNumeral(93);
-// console.log(twelve.toRoman());   //   'XCIII'
-
-// let thirteen = new RomanNumeral(141);
-// console.log(thirteen.toRoman()); //   'CXLI'
-
-// let fourteen = new RomanNumeral(163);
-// console.log(fourteen.toRoman()); //   'CLXIII'
-
-// let fifteen = new RomanNumeral(402);
-// console.log(fifteen.toRoman());  //   'CDII'
-
-// let sixteen = new RomanNumeral(575);
-// console.log(sixteen.toRoman());  //   'DLXXV'
-
-// let seventeen = new RomanNumeral(911);
-// console.log(seventeen.toRoman());//   'CMXI'
-
-// let eighteen = new RomanNumeral(1024);
-// console.log(eighteen.toRoman()); //   'MXXIV'
-
-// let nineteen = new RomanNumeral(3000);
-// console.log(nineteen.toRoman()); //   'MMM'
-
-// let twenty = new RomanNumeral(44);
-// console.log(twenty.toRoman());   //   'XLIV'
-
-// let twentyOne = new RomanNumeral(99);
-// console.log(twentyOne.toRoman()); //  'XCIX'
+let twentyOne = new RomanNumeral(99);
+console.log(twentyOne.toRoman()); //  'XCIX'
 
 
-/*
 
 */
 
