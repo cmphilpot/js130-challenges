@@ -37,7 +37,7 @@ class RomanNumeral {
 
     return finalString;
   }
-  
+
 };
 
 
@@ -45,7 +45,7 @@ class RomanNumeral {
 
 module.exports = RomanNumeral;
 
-/* test suite
+/*  test suite
 
 let one = new RomanNumeral(1);
 console.log(one.toRoman());      //   'I'
@@ -106,8 +106,6 @@ console.log(twenty.toRoman());   //   'XLIV'
 
 let twentyOne = new RomanNumeral(99);
 console.log(twentyOne.toRoman()); //  'XCIX'
-
-
 
 */
 

@@ -18,12 +18,9 @@ class Octal {
   }
 };
 
-
 module.exports = Octal;
 
-
-/*
-tests
+/* tests
 
 let one = new Octal('1');
 console.log(one.toDecimal());          // 1
@@ -35,7 +32,7 @@ let seventeen = new Octal('17');
 console.log(seventeen.toDecimal());    // 15
 
 let eleven = new Octal('11');
-console.log(eleven.toDecimal());          // 9
+console.log(eleven.toDecimal());       // 9
 
 let oneThirty = new Octal('130');
 console.log(oneThirty.toDecimal());          // 88
@@ -69,4 +66,5 @@ console.log(octal.toDecimal());          // 9
 
 let numsAndLetters = new Octal('234abc');
 console.log(numsAndLetters.toDecimal());          // 0
+
 */

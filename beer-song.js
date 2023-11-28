@@ -234,12 +234,11 @@ function wholeSong() {
     "No more bottles of beer on the wall, no more bottles of beer.\n" +
     "Go to the store and buy some more, 99 bottles of beer on the wall.\n";
 }
-
-
-console.log(wholeSong());
-console.log(BeerSong.lyrics());
-console.log(wholeSong() === BeerSong.lyrics());
 */
+
+// console.log(wholeSong());
+// console.log(BeerSong.lyrics());
+// console.log(wholeSong() === BeerSong.lyrics());
 
 // console.log(BeerSong.verse(99));
 
@@ -248,7 +247,7 @@ console.log(wholeSong() === BeerSong.lyrics());
  Take one down and pass it around, 98 bottles of beer on the wall.\n"
 */
 
-console.log(BeerSong.verse(3));
+// console.log(BeerSong.verse(3));
 
 /*
 "3 bottles of beer on the wall, 3 bottles of beer.
@@ -256,7 +255,7 @@ Take one down and pass it around, 2 bottles of beer
 on the wall.\n";
 */
 
-//console.log(BeerSong.verse(2));
+// console.log(BeerSong.verse(2));
 
 /*
 "2 bottles of beer on the wall, 2 bottles of beer.\n
