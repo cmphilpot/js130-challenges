@@ -1,3 +1,5 @@
+'use strict';
+
 class Meetup {
   constructor (year, month, day) {
 

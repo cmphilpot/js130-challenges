@@ -1,3 +1,5 @@
+'use strict';
+
 class Anagram {
   constructor (word) {
     this.matchWord = word.toLowerCase();

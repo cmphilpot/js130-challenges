@@ -1,3 +1,5 @@
+'use strict';
+
 class BeerSong {
 
   static verse (number) {

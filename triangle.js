@@ -12,6 +12,7 @@ method: .kind
 input: 3 numbers
 output: string 'equilateral' 'isoscelese' 'scalene'
 */
+'use strict';
 
 class Triangle {
   constructor(side1, side2, side3) {

@@ -1,3 +1,5 @@
+'use strict';
+
 class Octal {
   constructor (numberAsString) {
     this.numberAsString = numberAsString;

@@ -1,3 +1,5 @@
+'use strict';
+
 class RomanNumeral {
   constructor (number) {
     this.number = number;
@@ -39,8 +41,6 @@ class RomanNumeral {
   }
 
 };
-
-
 
 
 module.exports = RomanNumeral;

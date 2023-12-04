@@ -1,3 +1,5 @@
+'use strict';
+
 class SumOfMultiples {
   constructor (...setOfNumbers) {
     this.setOfNumbers = setOfNumbers;

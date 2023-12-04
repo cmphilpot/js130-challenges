@@ -7,6 +7,8 @@ Hamming distance over the shorter length.
 
 */
 
+'use strict';
+
 class DNA {
   constructor (matchStrand) {
     this.matchStrand = matchStrand;

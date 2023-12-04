@@ -11,7 +11,7 @@ Value breakdown:
 10: Q, Z
 
 */
-
+'use strict';
 
 class Scrabble {
   static POINTS_TABLE = {

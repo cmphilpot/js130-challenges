@@ -11,6 +11,7 @@ Deficient: Sum of factors < number
 Abundant: Sum of factors > number
 
 */
+'use strict';
 
 class PerfectNumber {
   constructor() {
