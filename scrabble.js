@@ -33,7 +33,8 @@ class Scrabble {
     if (word.length === 0) return 0;
     word = word.toUpperCase();
 
-    return word.split('').map(letter => Scrabble.POINTS_TABLE[letter]).reduce((acc, curr) => acc + curr, 0);
+    return word.split('').map(letter => Scrabble.POINTS_TABLE[letter])
+      .reduce((acc, curr) => acc + curr, 0);
   }
 
   static score(word) {
