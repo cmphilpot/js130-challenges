@@ -15,10 +15,10 @@ class Octal {
     let reversedArray = this.numberAsString.split('').reverse();
 
     return reversedArray.reduce((acc, curr, idx) => {
-      return acc += curr * (8 ** idx)
+      return acc += curr * (8 ** idx);
     }, 0);
   }
-};
+}
 
 module.exports = Octal;
 
