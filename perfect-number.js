@@ -19,13 +19,12 @@ class PerfectNumber {
 
   static classify(number) {
     if (number < 0) {
-      throw new Error('This is a negative number')
+      throw new Error('This is a negative number');
     }
 
     let divisors = PerfectNumber.getDivisors(number);
     let sum = divisors.reduce((acc, curr) => acc += curr, 0);
 
-    console.log(divisors, sum);
     if (sum > number) return 'abundant';
     if (sum === number) return 'perfect';
     if (sum < number) return 'deficient';
@@ -46,7 +45,7 @@ class PerfectNumber {
 
     return divisors;
   }
-};
+}
 
 module.exports = PerfectNumber;
 

@@ -7,9 +7,8 @@ class SumOfMultiples {
 
   to(number) {
     // less than number, sum All multiples
-    let arrOfMultiples = this.setOfNumbers.map(element => this.getMultiples(element, number)).flat(1);
-
-    console.log(arrOfMultiples);
+    let arrOfMultiples = this.setOfNumbers.map(element => this
+      .getMultiples(element, number)).flat(1);
 
     return arrOfMultiples.reduce((acc, curr) => acc += curr, 0);
   }
@@ -18,7 +17,7 @@ class SumOfMultiples {
     let multiples = [];
     let incrementingElement = element;
 
-    while (element < number) {
+    while (incrementingElement < number) {
       multiples.push(incrementingElement);
       incrementingElement += element;
     }
@@ -45,34 +44,7 @@ class SumOfMultiples {
 
     return multiples;
   }
-};
-
-// console.log(SumOfMultiples.to(1)); // 0
-// console.log(SumOfMultiples.to(4)); // 3
-// console.log(SumOfMultiples.to(10)); // 23
-// console.log(SumOfMultiples.to(100)); // 2_318
-// console.log(SumOfMultiples.to(1000)); // 233_168
-
-// let first = new SumOfMultiples(7, 13, 17);
-// console.log(first.to(20)); // 51
-
-// let second = new SumOfMultiples(4, 6);
-// console.log(second.to(15)); // 30
-
-let third = new SumOfMultiples(5, 6, 8)
-console.log(third.to(150)); // 4419
-
-// let fourth = new SumOfMultiples(43, 47)
-// console.log(fourth.to(10000)); // 2203160
-
-
-
-
-
-
-
-
-
+}
 
 module.exports = SumOfMultiples;
 
@@ -96,5 +68,21 @@ SumOfMultiples.to(100); // 2_318
 SumOfMultiples.to(1000); // 233_168
 
 
+console.log(SumOfMultiples.to(1)); // 0
+console.log(SumOfMultiples.to(4)); // 3
+console.log(SumOfMultiples.to(10)); // 23
+console.log(SumOfMultiples.to(100)); // 2_318
+console.log(SumOfMultiples.to(1000)); // 233_168
 
+let first = new SumOfMultiples(7, 13, 17);
+console.log(first.to(20)); // 51
+
+let second = new SumOfMultiples(4, 6);
+console.log(second.to(15)); // 30
+
+let third = new SumOfMultiples(5, 6, 8)
+console.log(third.to(150)); // 4419
+
+let fourth = new SumOfMultiples(43, 47)
+console.log(fourth.to(10000)); // 2203160
 */

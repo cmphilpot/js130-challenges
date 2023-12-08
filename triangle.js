@@ -1,18 +1,3 @@
-/*
-'equilateral': all three sides same length
-'isosceles':  exactly two sides of same length
-'scalene':  all sides of different lengths.
-
-validTriangle
--  all sides must be of length > 0
--  sum of lengths of any two sides must be > length of third side
-
-method: .kind
-
-input: 3 numbers
-output: string 'equilateral' 'isoscelese' 'scalene'
-*/
-
 'use strict';
 
 class Triangle {
@@ -29,7 +14,9 @@ class Triangle {
 
   _isInvalid() { // _ in name indicates "private" method
 
-    return (this.sortedSidesArray[0] <= 0) || ((this.sortedSidesArray[0] + this.sortedSidesArray[1]) <= this.sortedSidesArray[2]) ||
+    return (
+      this.sortedSidesArray[0] <= 0) ||
+      ((this.sortedSidesArray[0] + this.sortedSidesArray[1]) <= this.sortedSidesArray[2]) ||
       ((this.sortedSidesArray[1] + this.sortedSidesArray[2]) <= this.sortedSidesArray[0]) ||
       ((this.sortedSidesArray[0] + this.sortedSidesArray[2]) <= this.sortedSidesArray[1]);
   }
@@ -38,14 +25,14 @@ class Triangle {
     this._isInvalid();
 
     if ((this.side1 === this.side2) && (this.side2 === this.side3)) return 'equilateral';
-    if ((this.sortedSidesArray[0] === this.sortedSidesArray[1]) || (this.sortedSidesArray[1] === this.sortedSidesArray[2])) return 'isosceles';
+    if ((this.sortedSidesArray[0] === this.sortedSidesArray[1]) ||
+    (this.sortedSidesArray[1] === this.sortedSidesArray[2])) return 'isosceles';
 
     return 'scalene';
   }
 }
 
 module.exports = Triangle;
-
 
 
 /* Tests
@@ -107,4 +94,17 @@ class Triangle {
 module.exports = Triangle;
 
 
+/*
+'equilateral': all three sides same length
+'isosceles':  exactly two sides of same length
+'scalene':  all sides of different lengths.
+
+validTriangle
+-  all sides must be of length > 0
+-  sum of lengths of any two sides must be > length of third side
+
+method: .kind
+
+input: 3 numbers
+output: string 'equilateral' 'isoscelese' 'scalene'
 */

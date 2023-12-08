@@ -26,21 +26,25 @@ class RomanNumeral {
 
   toRoman() {
     const LEN = String(this.number).length;
-    let arrayOfDigitsReversed = Array.from(String(this.number)).reverse();
-    let finalString = '';
+    let arrOfDigitsReversed = Array.from(String(this.number)).reverse();
+    let final = '';
 
     for (let index = 0; index < LEN; index += 1) {
-      if (arrayOfDigitsReversed[index] == 0) continue;
-      if (index === 0) finalString += RomanNumeral.ones[arrayOfDigitsReversed[index]];
-      if (index === 1) finalString = RomanNumeral.tens[arrayOfDigitsReversed[index]] + finalString;
-      if (index === 2) finalString = RomanNumeral.hundreds[arrayOfDigitsReversed[index]] + finalString;
-      if (index === 3) finalString = RomanNumeral.thousands[arrayOfDigitsReversed[index]] + finalString;
+      if (arrOfDigitsReversed[index] === 0) continue;
+      if (index === 0) final += RomanNumeral
+        .ones[arrOfDigitsReversed[index]];
+      if (index === 1) final = RomanNumeral
+        .tens[arrOfDigitsReversed[index]] + final;
+      if (index === 2) final = RomanNumeral
+        .hundreds[arrOfDigitsReversed[index]] + final;
+      if (index === 3) final = RomanNumeral
+        .thousands[arrOfDigitsReversed[index]] + final;
     }
 
-    return finalString;
+    return final;
   }
 
-};
+}
 
 
 module.exports = RomanNumeral;

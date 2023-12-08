@@ -19,8 +19,12 @@ class DNA {
     let copyOfCompare = compareStrand.slice();
 
     if (copyOfCompare === copyOfMatch) return 0;
-    if (copyOfMatch.length > copyOfCompare.length) copyOfMatch = copyOfMatch.slice(0, copyOfCompare.length);
-    if (copyOfCompare.length > copyOfMatch.length) copyOfCompare = copyOfCompare.slice(0, copyOfMatch.length);
+    if (copyOfMatch.length > copyOfCompare.length) {
+      copyOfMatch = copyOfMatch.slice(0, copyOfCompare.length);
+    }
+    if (copyOfCompare.length > copyOfMatch.length) {
+      copyOfCompare = copyOfCompare.slice(0, copyOfMatch.length);
+    }
 
     let counter = 0;
 
@@ -30,7 +34,23 @@ class DNA {
 
     return counter;
   }
-};
+}
+
+module.exports = DNA;
+
+/*
+tests
+
+1. "no difference between empty strands"
+2. "no difference between identical strands"
+3. "complete hamming distance in small strand"
+4. "hamming distance in off by one strand"
+5. "small hamming distance in middle somewhere"
+6. "larger distance"
+7. "ignores extra length on other strand when longer"
+8. "ignores extra length on original strand when longer"
+9. "does not actually shorten original strand"
+
 
 let one = new DNA('');
 console.log(one.hammingDistance('')); // 0
@@ -64,27 +84,4 @@ let nine = new DNA('AGACAACAGCCAGCCGCCGGATT');
 console.log(nine.hammingDistance('AGGCAA')); // 1
 console.log(nine.hammingDistance('AGACATCTTTCAGCCGCCGGATTAGGCAA')); // 4
 console.log(nine.hammingDistance('AGG')); // 1
-
-module.exports = DNA;
-
-/*
-
-
-
-
-*/
-
-/*
-tests
-
-1. "no difference between empty strands"
-2. "no difference between identical strands"
-3. "complete hamming distance in small strand"
-4. "hamming distance in off by one strand"
-5. "small hamming distance in middle somewhere"
-6. "larger distance"
-7. "ignores extra length on other strand when longer"
-8. "ignores extra length on original strand when longer"
-9. "does not actually shorten original strand"
-
 */

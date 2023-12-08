@@ -2,8 +2,8 @@
 
 class Robot {
   static arrayOfNames = [];
-  static letters_in_name = 2;
-  static numbers_in_name = 3;
+  static lettersInName = 2;
+  static numbersInName = 3;
   static DIGITS = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   static CHARS_UPPERCASED = [
     'A', 'B', 'C', 'D', 'E', 'F', 'G',
@@ -17,17 +17,18 @@ class Robot {
     let min = 0;
     let max = LEN;
 
-    return Math.floor(Math.random() * (max - min) + min);
+    return Math.floor(Math.random() * ((max - min) + min));
   }
 
   static getTwoLetters () {
-   return Array.from({length: Robot.letters_in_name}, () => {
-    return Robot.CHARS_UPPERCASED[Robot.getRandomArbitrary(Robot.CHARS_UPPERCASED)];
-   }).join('');
+    return Array.from({length: Robot.lettersInName}, () => {
+      return Robot.CHARS_UPPERCASED[Robot
+        .getRandomArbitrary(Robot.CHARS_UPPERCASED)];
+    }).join('');
   }
 
   static getThreeDigits () {
-    return Array.from({length: Robot.numbers_in_name}, () => {
+    return Array.from({length: Robot.numbersInName}, () => {
       return Robot.DIGITS[Robot.getRandomArbitrary(Robot.DIGITS)];
     }).join('');
   }
@@ -41,10 +42,10 @@ class Robot {
 
   name () {
     if (this.robotName) return this.robotName;
-      this.robotName = Robot.getTwoLetters() + Robot.getThreeDigits();
+    this.robotName = Robot.getTwoLetters() + Robot.getThreeDigits();
 
     if (Robot.arrayOfNames.includes(this.robotName)) this.name();
-      Robot.arrayOfNames.push(this.robotName);
+    Robot.arrayOfNames.push(this.robotName);
 
     return this.robotName;
   }
@@ -80,8 +81,10 @@ return a string
 
   static getTwoLetters () {
     let letters = '';
-    letters += Robot.CHARS_UPPERCASED[Robot.getRandomArbitrary(Robot.CHARS_UPPERCASED)];
-    letters += Robot.CHARS_UPPERCASED[Robot.getRandomArbitrary(Robot.CHARS_UPPERCASED)];
+    letters += Robot.CHARS_UPPERCASED[Robot
+      .getRandomArbitrary(Robot.CHARS_UPPERCASED)];
+    letters += Robot.CHARS_UPPERCASED[Robot
+      .getRandomArbitrary(Robot.CHARS_UPPERCASED)];
 
     return letters;
   }

@@ -79,7 +79,8 @@ class Anagram {
       const LEN = word.length;
       let arrOfLetters = [...word];
 
-      if ((LEN === LEN_OF_MATCHWORD) && (word !== this.matchWord) && (arrOfLetters.every(letter => this.matchWord.includes(letter))))
+      if ((LEN === LEN_OF_MATCHWORD) && (word !== this.matchWord)
+      && (arrOfLetters.every(letter => this.matchWord.includes(letter))))
         newArr.push(word);
     });
 
