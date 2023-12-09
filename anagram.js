@@ -5,29 +5,26 @@ class Anagram {
     this.matchWord = word.toLowerCase();
   }
 
-  sortChars() {
-
+  sortChars(word) {
+    return word.split('').sort().join('');
   }
 
-  isAnagram () {
-
+  isAnagram (word) {
+    if (word.toLowerCase() === this.matchWord) return false;
+    return this.sortChars(word.toLowerCase()) === this.sortChars(this.matchWord);
   }
 
   match(list) {
-
+    return list.filter(word => {
+      return this.isAnagram(word);
+    });
   }
 }
 
-let penultimate = ['eagle'];
-let last = ['cashregister', 'Carthorse', 'radishes'];
+module.exports = Anagram;
 
-let pen = new Anagram('galea');
-let lst = new Anagram('Orchestra');
 
-console.log(pen.match(penultimate));
-console.log(lst.match(last));
-
-/*
+/* tests
 let words = ["enlists", "google", "inlets", "banana"];
 let one = ['hello', 'world', 'zombies', 'pants'];
 let two = ['stream', 'pigeon', 'maters'];
@@ -89,6 +86,12 @@ class Anagram {
 }
 
 
-*/
+// let penultimate = ['eagle'];
+// let last = ['cashregister', 'Carthorse', 'radishes'];
 
-module.exports = Anagram;
+// let pen = new Anagram('galea');
+// let lst = new Anagram('Orchestra');
+
+// console.log(pen.match(penultimate));   // none
+// console.log(lst.match(last));          // Carthorse
+*/
