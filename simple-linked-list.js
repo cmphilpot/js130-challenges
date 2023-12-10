@@ -2,7 +2,7 @@
 
 class Element {
   constructor (number) {
-
+    this.number = number;
   }
 
   datum () {
@@ -40,6 +40,7 @@ class SimpleLinkedList {
   }
 }
 
-
-
-module.exports = Element;
+module.exports = {
+  Element,
+  SimpleLinkedList
+};
