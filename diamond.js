@@ -102,5 +102,3 @@ console.log(Diamond.makeDiamond('E'));
   }
 
 */
-
-
